@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TeamPulse — Workload Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>TeamPulse</h1>
+  <p>Live workload snapshot for the Engineering &amp; Design pod</p>
+</header>
+
+<div class="panel" role="search">
+  <label for="searchInput" class="visually-hidden">Search team members by name</label>
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search team members..."
+    aria-label="Search team members by name">
+
+  <div class="chip-group" role="group" aria-label="Filter by role">
+    <button type="button" class="chip" aria-pressed="true" data-role="all">All</button>
+    <button type="button" class="chip" aria-pressed="false" data-role="engineering">Engineering</button>
+    <button type="button" class="chip" aria-pressed="false" data-role="design">Design</button>
+    <button type="button" class="chip" aria-pressed="false" data-role="qa">QA</button>
+  </div>
+</div>
+
+<div class="grid" id="cardGrid" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
